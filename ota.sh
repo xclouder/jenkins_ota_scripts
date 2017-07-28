@@ -1,13 +1,12 @@
-OTA_SERVER_URL="https://ci.ezfun.cn"
+# OTA_SERVER_URL="https://ci.ezfun.cn"
+OTA_SERVER_URL=$1
+echo $OTA_SERVER_URL
 IPA=`ls | grep ipa`
 PLIST_FILE="install.plist"
 
 cd .
 
-brew install wget
-wget https://raw.githubusercontent.com/sveinungkb/ios-ota-buddy/master/otabuddy.sh
 chmod 755 ./otabuddy.sh
-
 ./otabuddy.sh plist $IPA ${OTA_SERVER_URL}/$IPA $PLIST_FILE
 
 #修改otabuddy.sh 获取INSTALL_URL

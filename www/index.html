@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>OTA服务</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
+</head>
+
+<body>
+	<a href="ca.crt">安装根证书</a>
+	<a id="package_install" href="">安装应用</a>
+	<img id="url_qrcode" src="" alt="qrcode" />
+
+	<script type="text/javascript">
+		//得到参数数组
+		$(document).ready(function(){
+			var url = getUrlVar("package_url");
+			var qrsrc = getUrlVar("qr_src");
+
+			$("#package_install").attr("href", url);
+			$("#url_qrcode").attr("src", qr_src);
+
+		});
+			
+	</script>
+</body>
+
+</html>
