@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta charset="UTF-8"/>
 	<title>OTA服务</title>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/util.js"></script>
@@ -16,6 +17,9 @@
 			var url = getUrlVar("package_url");
 			var qrsrc = getUrlVar("qr_src");
 
+			url = url.replace("http", "https");
+			url = url.replace(":8080", "");
+			url = "itms-services://?action=download-manifest&url=" + encodeURIComponent(url);
 			$("#package_install").attr("href", url);
 			$("#url_qrcode").attr("src", qrsrc);
 
