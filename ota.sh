@@ -1,20 +1,26 @@
-# OTA_SERVER_URL="https://ci.ezfun.cn"
-OTA_SERVER_URL=$1
-echo $OTA_SERVER_URL
-IPA=`ls | grep ipa`
+BUILD_PATH=$1
+BUILD_URL=$2
+OTA_WEB_URL=$3
+QR_FILE_NAME=install.png
+
+echo "BUILDPATH:$BUILD_PATH"
+
+echo $OTA_DOWNLOAD_URL
+IPA=`ls $BUILD_PATH | grep ipa`
 PLIST_FILE="install.plist"
 
-cd .
+urlencode()
+{
+	echo $1 | python -c 'import sys,urllib;print urllib.quote_plus(sys.stdin.read().strip())'
+}
 
 chmod 755 ./otabuddy.sh
-./otabuddy.sh plist $IPA ${OTA_SERVER_URL}/$IPA $PLIST_FILE
+./otabuddy.sh plist $IPA ${BUILD_URL}$IPA $BUILD_PATH/$PLIST_FILE
 
-#修改otabuddy.sh 获取INSTALL_URL
-INSTALL_URL=`./otabuddy.sh itms ${OTA_SERVER_URL}/${PLIST_FILE}`
-
-
-echo $INSTALL_URL > install.htm
-
+OTA_DOWNLOAD_URL="${OTA_WEB_URL}?package_url=${BUILD_URL}$PLIST_FILE&qr_src=${BUILD_URL}${QR_FILE_NAME}"
+echo "QR_URL:"$OTA_DOWNLOAD_URL
+OTA_DOWNLOAD_URL_ENCODE="${OTA_WEB_URL}?package_url=$(urlencode ${BUILD_URL}$PLIST_FILE)&qr_src=$(urlencode ${BUILD_URL}/${QR_FILE_NAME})"
+echo "QR_URL_ENCODED:"$OTA_DOWNLOAD_URL_ENCODE
 
 brew install qrencode
-qrencode -o install.png $INSTALL_URL
+qrencode -o $BUILD_PATH/$QR_FILE_NAME $OTA_DOWNLOAD_URL_ENCODE
