@@ -13,15 +13,29 @@
 					<key>url</key>
 					<string>http://ci.ezfun.cn:8080/job/test_ota/18/artifact/build/OTATest.ipa</string>
 				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>url</key>
+					<string>http://ota.ezfun.cn/icon.png</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>full-size-image</string>
+					<key>url</key>
+					<string>http://ota.ezfun.cn/icon.png</string>
+				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.ezfun.OTATest</string>
+				<string>com.ezfunmobile.xgame2</string>
+				<key>bundle-version</key>
+				<string>1.0.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string></string>
+				<string>刀锋无双2</string>
 			</dict>
 		</dict>
 	</array>
