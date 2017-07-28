@@ -47,7 +47,7 @@ otaplist()
 		BUNDLE_NAME=$($PLIST_BUDDY "Print CFBundleName" $APP_PLIST)
 
 		# Clean up
-		rm $APP_PLIST
+		$APP_PLIST
 
 		# Create .plist
 		$PLIST_BUDDY "Add :items array" $OTA_PLIST
