@@ -3,11 +3,13 @@ BUILD_URL=$2
 OTA_WEB_URL=$3
 QR_FILE_NAME=install.png
 
-echo "BUILDPATH:$BUILD_PATH"
-
-echo $OTA_DOWNLOAD_URL
 IPA=`ls $BUILD_PATH | grep ipa`
 PLIST_FILE="install.plist"
+
+echo "BUILD_PATH:$BUILD_PATH"
+echo "OTA_DOWNLOAD_URL:$OTA_DOWNLOAD_URL"
+echo "IPA:$IPA"
+echo "PLIST_FILE:$PLIST_FILE"
 
 urlencode()
 {
