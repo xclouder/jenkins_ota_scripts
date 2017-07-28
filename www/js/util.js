@@ -12,5 +12,5 @@ function getUrlVars(){
 
 //得到指定参数的value
 function getUrlVar(name){
-    return getUrlVars()[name];
+    return decodeURIComponent(getUrlVars()[name]);
 }
