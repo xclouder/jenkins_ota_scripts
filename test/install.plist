@@ -9,7 +9,7 @@
 			<array>
 				<dict>
 					<key>kind</key>
-					<string>software-package</string>
+					<string>software</string>
 					<key>url</key>
 					<string>http://ci.ezfun.cn:8080/job/test_ota/18/artifact/build/OTATest.ipa</string>
 				</dict>
