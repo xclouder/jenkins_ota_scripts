@@ -16,10 +16,11 @@
 		$(document).ready(function(){
 			var url = getUrlVar("package_url");
 			var qrsrc = getUrlVar("qr_src");
-
+			//"https://raw.githubusercontent.com/xclouder/jenkins_ota_scripts/master/test/install.plist"
 			url = url.replace("http", "https");
 			url = url.replace(":8080", "");
 			url = "itms-services://?action=download-manifest&url=" + encodeURIComponent(url);
+
 			$("#package_install").attr("href", url);
 			$("#url_qrcode").attr("src", qrsrc);
 
