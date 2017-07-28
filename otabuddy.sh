@@ -37,8 +37,8 @@ otaplist()
 		# Extract IPA-files
 		APP_PLIST=temp.plist
 		OTA_PLIST=$3
-		echo $1
-		echo $OTA_PLIST
+		echo "IPA PATH:$1"
+		echo "OTA_PLIST:$OTA_PLIST"
 
 		unzip -p "$1" "**.app/Info.plist" > $APP_PLIST
 
@@ -47,7 +47,7 @@ otaplist()
 		BUNDLE_NAME=$($PLIST_BUDDY "Print CFBundleName" $APP_PLIST)
 
 		# Clean up
-		$APP_PLIST
+		#rm $APP_PLIST
 
 		# Create .plist
 		$PLIST_BUDDY "Add :items array" $OTA_PLIST

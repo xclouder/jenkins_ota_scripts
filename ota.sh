@@ -7,7 +7,7 @@ IPA=`ls $BUILD_PATH | grep ipa`
 PLIST_FILE="install.plist"
 
 echo "BUILD_PATH:$BUILD_PATH"
-echo "OTA_DOWNLOAD_URL:$OTA_DOWNLOAD_URL"
+echo "OTA_WEB_URL:$OTA_WEB_URL"
 echo "IPA:$IPA"
 echo "PLIST_FILE:$PLIST_FILE"
 
@@ -17,7 +17,7 @@ urlencode()
 }
 
 chmod 755 ./otabuddy.sh
-./otabuddy.sh plist $IPA ${BUILD_URL}$IPA $BUILD_PATH/$PLIST_FILE
+./otabuddy.sh plist $BUILD_PATH/$IPA ${BUILD_URL}$IPA $BUILD_PATH/$PLIST_FILE
 
 OTA_DOWNLOAD_URL="${OTA_WEB_URL}?package_url=${BUILD_URL}$PLIST_FILE&qr_src=${BUILD_URL}${QR_FILE_NAME}"
 echo "QR_URL:"$OTA_DOWNLOAD_URL
