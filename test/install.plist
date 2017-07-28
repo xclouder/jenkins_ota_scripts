@@ -9,7 +9,7 @@
 			<array>
 				<dict>
 					<key>kind</key>
-					<string>software</string>
+					<string>software-package</string>
 					<key>url</key>
 					<string>http://ci.ezfun.cn:8080/job/test_ota/18/artifact/build/OTATest.ipa</string>
 				</dict>
@@ -17,13 +17,13 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.ezfun.OTATest</string>
+				<string>com.ezfunmobile.xgame2</string>
 				<key>bundle-version</key>
 				<string>1.0.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>OTATest</string>
+				<string>刀锋无双2</string>
 			</dict>
 		</dict>
 	</array>
