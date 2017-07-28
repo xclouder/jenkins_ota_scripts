@@ -44,7 +44,7 @@ otaplist()
 
 		#Read contents
 		BUNDLE_IDENTIFIER=$($PLIST_BUDDY "Print CFBundleIdentifier" $APP_PLIST)
-		BUNDLE_NAME=$($PLIST_BUDDY "Print CFBundleDisplayName" $APP_PLIST)
+		BUNDLE_NAME=$($PLIST_BUDDY "Print CFBundleName" $APP_PLIST)
 
 		# Clean up
 		rm $APP_PLIST
