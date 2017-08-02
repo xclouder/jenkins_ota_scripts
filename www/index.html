@@ -1,16 +1,24 @@
 <html>
 <head>
-	<meta charset="UTF-8"/>
-	<title>OTA服务</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>安装ipa</title>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/util.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-	<a href="ca.crt">安装根证书</a>
-	<a id="package_install" href="">安装应用</a>
-	<img id="url_qrcode" src="" alt="qrcode" />
+
+	<div id="container">
+		<p class="title">EZFun在线安装系统</p>
+		<div id="install_box">
+			<a href="ca.crt" class="button">安装根证书</a>
+			<a id="package_install" href="" class="button">安装应用</a>
+			<img id="url_qrcode" src="qr.png" alt="qrcode" />
+		</div>
+	</div>
 
 	<script type="text/javascript">
 		//得到参数数组
@@ -24,10 +32,14 @@
 			url = "itms-services://?action=download-manifest&url=" + encodeURIComponent(url);
 
 			$("#package_install").attr("href", url);
-			$("#url_qrcode").attr("src", qrsrc);
+
+			if (typeof qrsrc === 'undefined';)
+			{
+				$("#url_qrcode").attr("src", qrsrc);
+			}
+
 
 		});
-			
 	</script>
 </body>
 

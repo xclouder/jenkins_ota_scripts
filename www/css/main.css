@@ -1,0 +1,44 @@
+body
+{
+	background: #19222C;
+}
+
+#container
+{
+	width: 100%;
+	margin: 100px auto;
+}
+
+#install_box
+{
+	padding-top:50px;
+}
+
+.title
+{
+	color: #3F8DC3;
+	font-size:72px;
+	text-align: center;
+}
+
+a.button
+{
+	background: #283D48;
+	display:block;
+	width: 60%;
+	height: 120px;
+	font-size: 60px;
+	color: #D3DBE1;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 50px;
+	margin:50px auto;
+}
+
+#url_qrcode
+{
+	display: block;
+	margin: 120px auto;
+	width:400px;
+	height:400px;
+}
